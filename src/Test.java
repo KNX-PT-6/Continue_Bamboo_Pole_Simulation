@@ -33,6 +33,7 @@ public class Test {
 
     private static void runSimulation(Enums.BRAINTYPE player_1, Enums.BRAINTYPE player_2) {
         double[] results = new double[RUNS];
+
 //        final double[] plots = new double[RUN_PER_SIMULATION / PLOT_GAP];
 
         for (int i = 0; i < RUNS; i++) {
@@ -47,18 +48,21 @@ public class Test {
                 if (q == 0) {
                     sum_of_results += 1;
                 }
+
 //                if (j % PLOT_GAP == 0) {
 //                    plots[j / PLOT_GAP - 1] = (double)sum_of_results / j;
 //                }
+
 //                System.out.println((q + 1) + "th player won the " + j + "th round.");
             }
 
 //            Utils.logTo("PLOT_" + (i + 1) + ".txt", Utils.arrayToString(plots));
-            System.out.println(RUN_PER_SIMULATION + "run performed, player 1 won " + sum_of_results + "times.");
+//            System.out.println(RUN_PER_SIMULATION + "run performed, player 1 won " + sum_of_results + "times.");
             results[i] = (double) sum_of_results / RUN_PER_SIMULATION;
         }
         Arrays.sort(results);
         Utils.logTo(player_1.toString() + "_" + player_2.toString() + ".txt", Utils.arrayToString(results));
+        Utils.logTo("ConfidenceInterval_" + player_1.toString() + "_" + player_2.toString() + ".txt", Utils.arrayToConfidenceInterval(results));
     }
 
 }

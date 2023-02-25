@@ -53,7 +53,7 @@ public class Str_QuickPairs extends Brain {
                 //Give the last card from a pair, remove it from pairs.
                 Card c = pairs.get(0).getDown();
                 pairs.remove(0);
-                status = PAIRPROCESS.UP_OUT;
+                status = PAIRPROCESS.DOWN_OUT;
                 return deck.remove(deck.indexOf(c));
             }
         }
