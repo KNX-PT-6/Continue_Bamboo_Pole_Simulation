@@ -7,27 +7,27 @@ public class BrainFactory {
 
     public static Brain getBrain(BRAINTYPE type) {
         switch (type) {
-            case GREEDYPAIRS -> {
-                return new Str_GreedyPairs();
+            case PAIRS -> {
+                return new Str_Pairs();
             }
-            case LAZYRANDOM -> {
-                return new Str_LazyRandom();
+            case PAIRS_1 -> {
+                return new Str_PairsWithSingle();
             }
-            case QUICKPAIRS -> {
-                return new Str_QuickPairs();
+            case PAIRS_2 -> {
+                return new Str_PairsWithSingle(2);
             }
-            case GREEDYPAIRS_2 -> {
-                return new Str_GreedyPairs(2);
+            case PAIRS_5 -> {
+                return new Str_PairsWithSingle(5);
             }
-            case GREEDYPAIRS_5 -> {
-                return new Str_GreedyPairs(5);
-            }
-            case GREEDYPAIRS_10 -> {
-                return new Str_GreedyPairs(10);
+            case PAIRS_10 -> {
+                return new Str_PairsWithSingle(10);
             }
 
+            case RANDOM -> {
+                return new Str_Random();
+            }
             default -> {
-                return new Str_LazyFirst();
+                return new Str_First();
             }
         }
     }

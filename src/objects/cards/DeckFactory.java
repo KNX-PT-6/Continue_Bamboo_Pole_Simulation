@@ -18,8 +18,11 @@ public class DeckFactory {
         return deck;
     }
 
-    public static Deck[] getPlayerDeck(int players) {
-        Deck freshDeck = genFreshDeck();
+    public static Deck[] getPlayerDeck(int players, int numOfDecks) {
+        Deck freshDeck = new Deck();
+        for(int i=0;i<numOfDecks;i++){
+            freshDeck.addAll(genFreshDeck());
+        }
         Deck[] decks = new Deck[players];
         Collections.shuffle(freshDeck);
         for(int i=0;i<players;i++){

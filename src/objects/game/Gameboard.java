@@ -17,8 +17,12 @@ public class Gameboard {
     }
 
     public Gameboard(int num_of_players) {
+        this(num_of_players, 1);
+    }
+
+    public Gameboard(int num_of_players, int num_of_decks) {
         players = new Player[num_of_players];
-        Deck[] decks = DeckFactory.getPlayerDeck(num_of_players);
+        Deck[] decks = DeckFactory.getPlayerDeck(num_of_players, num_of_decks);
         for (int i = 0; i < num_of_players; i++) {
             players[i] = new Player(decks[i]);
         }

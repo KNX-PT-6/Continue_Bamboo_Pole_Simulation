@@ -25,7 +25,7 @@ public class Utils {
         StringBuilder sb = new StringBuilder();
         for (double d : array) {
             sb.append(d);
-            sb.append("\n");
+            sb.append("\r\n");
         }
         return sb.toString();
     }
